@@ -6,8 +6,8 @@ import logging
 
 from google import genai
 
-from scholera.config import settings
-from scholera.retrieval.hybrid_search import hybrid_retrieve
+from ai_tutor.config import settings
+from ai_tutor.retrieval.hybrid_search import hybrid_retrieve
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ def _get_client() -> genai.Client:
 
 
 STUDY_GUIDE_PROMPT = (
-    'You are Scholera AI, an expert study coach for the course "{course_title}". '
+    'You are AI Tutor, an expert study coach for the course "{course_title}". '
     "A student wants to deeply understand a topic. Using ONLY the provided lecture materials, "
     "create a comprehensive study guide.\n\n"
     "Structure your response as:\n"

@@ -3,7 +3,7 @@ from __future__ import annotations
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 _client: chromadb.PersistentClient | None = None
 _embed_model: SentenceTransformer | None = None

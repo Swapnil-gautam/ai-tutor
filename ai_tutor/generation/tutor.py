@@ -6,8 +6,8 @@ import logging
 
 from google import genai
 
-from scholera.config import settings
-from scholera.retrieval.hybrid_search import hybrid_retrieve
+from ai_tutor.config import settings
+from ai_tutor.retrieval.hybrid_search import hybrid_retrieve
 
 logger = logging.getLogger(__name__)
 

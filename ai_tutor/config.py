@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     uploads_dir: Path = Path("data/uploads")
     images_dir: Path = Path("data/images")
     audio_dir: Path = Path("data/audio")
-    sqlite_path: Path = Path("data/scholera.db")
+    sqlite_path: Path = Path("data/ai_tutor.db")
 
     # Ingestion
     text_density_threshold: int = 80
@@ -30,7 +30,7 @@ class Settings(BaseSettings):
     rerank_top_k: int = 8
     rrf_k: int = 60
 
-    model_config = {"env_file": ".env", "env_prefix": "SCHOLERA_"}
+    model_config = {"env_file": ".env", "env_prefix": "AI_TUTOR_"}
 
 
 settings = Settings()

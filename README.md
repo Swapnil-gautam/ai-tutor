@@ -1,4 +1,4 @@
-# Scholera AI Backend
+# AI Tutor Backend
 
 An AI-native that ingests course materials (PDF/PPTX) and powers a **RAG Tutor** grounded in those lectures.
 
@@ -24,12 +24,12 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-Set `SCHOLERA_GEMINI_API_KEY` in `.env`.
+Set `AI_TUTOR_GEMINI_API_KEY` in `.env`.
 
 ### 3) Run
 
 ```bash
-python -m scholera.cli serve
+python -m ai_tutor.cli serve
 ```
 
 Open `http://localhost:8000/`.
@@ -37,9 +37,9 @@ Open `http://localhost:8000/`.
 ## Quick start (CLI)
 
 ```bash
-python -m scholera.cli create-course --title "3D Computer Vision"
-python -m scholera.cli ingest --course-id <ID> --file lecture01.pdf --lecture-number 1 --lecture-title "Intro"
-python -m scholera.cli ask --course-id <ID> "Explain the pinhole camera model."
+python -m ai_tutor.cli create-course --title "3D Computer Vision"
+python -m ai_tutor.cli ingest --course-id <ID> --file lecture01.pdf --lecture-number 1 --lecture-title "Intro"
+python -m ai_tutor.cli ask --course-id <ID> "Explain the pinhole camera model."
 ```
 
 ## What's included
@@ -60,7 +60,7 @@ python -m scholera.cli ask --course-id <ID> "Explain the pinhole camera model."
 
 ```
                         ┌─────────────────────────────────────────────┐
-                        │              Scholera AI Backend            │
+                        │              AI Tutor Backend               │
                         └─────────────────────────────────────────────┘
 
     ┌──────────────┐     ┌──────────────────────────────────────────┐

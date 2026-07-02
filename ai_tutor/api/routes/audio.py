@@ -5,10 +5,10 @@ from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from scholera.config import settings
-from scholera.generation.api_errors import format_client_error
-from scholera.generation.audio_overview import generate_audio_overview
-from scholera.storage import metadata_db as db
+from ai_tutor.config import settings
+from ai_tutor.generation.api_errors import format_client_error
+from ai_tutor.generation.audio_overview import generate_audio_overview
+from ai_tutor.storage import metadata_db as db
 
 course_router = APIRouter()
 public_router = APIRouter()

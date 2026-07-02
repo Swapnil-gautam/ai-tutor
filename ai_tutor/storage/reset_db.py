@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import shutil
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 
 def reset_all_local_data() -> None:

@@ -6,7 +6,7 @@ import logging
 
 from google import genai
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ def _get_client() -> genai.Client:
     if _client is None:
         if not settings.gemini_api_key:
             raise ValueError(
-                "Gemini API key is not set. Add SCHOLERA_GEMINI_API_KEY to your .env file."
+                "Gemini API key is not set. Add AI_TUTOR_GEMINI_API_KEY to your .env file."
             )
         _client = genai.Client(api_key=settings.gemini_api_key)
     return _client

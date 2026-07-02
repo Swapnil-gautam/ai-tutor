@@ -7,7 +7,7 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 from typing import Any
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS courses (

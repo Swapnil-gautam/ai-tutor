@@ -7,8 +7,8 @@ import logging
 import time
 from pathlib import Path
 
-from scholera.generation.tutor import ask_tutor
-from scholera.retrieval.hybrid_search import hybrid_retrieve
+from ai_tutor.generation.tutor import ask_tutor
+from ai_tutor.retrieval.hybrid_search import hybrid_retrieve
 
 logger = logging.getLogger(__name__)
 

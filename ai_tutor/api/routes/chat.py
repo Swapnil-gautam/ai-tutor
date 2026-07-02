@@ -5,11 +5,11 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from scholera.generation.api_errors import format_client_error
-from scholera.generation.direct_gemini import ask_gemini_direct
-from scholera.generation.study_guide import generate_study_guide
-from scholera.generation.tutor import ask_tutor
-from scholera.storage import metadata_db as db
+from ai_tutor.generation.api_errors import format_client_error
+from ai_tutor.generation.direct_gemini import ask_gemini_direct
+from ai_tutor.generation.study_guide import generate_study_guide
+from ai_tutor.generation.tutor import ask_tutor
+from ai_tutor.storage import metadata_db as db
 
 router = APIRouter()
 

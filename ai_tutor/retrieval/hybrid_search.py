@@ -8,9 +8,9 @@ import re
 from rank_bm25 import BM25Okapi
 from sentence_transformers import CrossEncoder
 
-from scholera.config import settings
-from scholera.storage import metadata_db as db
-from scholera.storage import vector_store
+from ai_tutor.config import settings
+from ai_tutor.storage import metadata_db as db
+from ai_tutor.storage import vector_store
 
 logger = logging.getLogger(__name__)
 

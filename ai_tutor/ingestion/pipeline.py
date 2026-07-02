@@ -6,14 +6,14 @@ import asyncio
 import logging
 from pathlib import Path
 
-from scholera.config import settings
-from scholera.ingestion.chunker import create_chunks
-from scholera.ingestion.extractors.pdf_extractor import extract_pdf
-from scholera.ingestion.extractors.ppt_extractor import extract_pptx
-from scholera.ingestion.summarizer import generate_lecture_summary, generate_topic_summaries
-from scholera.ingestion.vision import describe_slide_image, should_use_vision
-from scholera.storage import metadata_db as db
-from scholera.storage import vector_store
+from ai_tutor.config import settings
+from ai_tutor.ingestion.chunker import create_chunks
+from ai_tutor.ingestion.extractors.pdf_extractor import extract_pdf
+from ai_tutor.ingestion.extractors.ppt_extractor import extract_pptx
+from ai_tutor.ingestion.summarizer import generate_lecture_summary, generate_topic_summaries
+from ai_tutor.ingestion.vision import describe_slide_image, should_use_vision
+from ai_tutor.storage import metadata_db as db
+from ai_tutor.storage import vector_store
 
 logger = logging.getLogger(__name__)
 

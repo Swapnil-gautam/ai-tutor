@@ -5,9 +5,9 @@ from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form, BackgroundTasks
 
-from scholera.config import settings
-from scholera.storage import metadata_db as db
-from scholera.ingestion.pipeline import run_ingestion
+from ai_tutor.config import settings
+from ai_tutor.storage import metadata_db as db
+from ai_tutor.ingestion.pipeline import run_ingestion
 
 router = APIRouter()
 
@@ -55,7 +55,7 @@ def delete_material(course_id: str, material_id: str):
     if material["course_id"] != course_id:
         raise HTTPException(404, "Material not found in this course")
 
-    from scholera.storage import vector_store
+    from ai_tutor.storage import vector_store
     try:
         collection = vector_store.get_collection(course_id)
         existing = collection.get(where={"material_id": material_id})

@@ -5,9 +5,9 @@ from __future__ import annotations
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from scholera.generation.api_errors import format_client_error
-from scholera.generation.quiz import generate_quiz
-from scholera.storage import metadata_db as db
+from ai_tutor.generation.api_errors import format_client_error
+from ai_tutor.generation.quiz import generate_quiz
+from ai_tutor.storage import metadata_db as db
 
 router = APIRouter()
 

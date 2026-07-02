@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from scholera.generation.api_errors import format_client_error
-from scholera.generation.tutor import ask_tutor
-from scholera.storage import metadata_db as db
+from ai_tutor.generation.api_errors import format_client_error
+from ai_tutor.generation.tutor import ask_tutor
+from ai_tutor.storage import metadata_db as db
 
 router = APIRouter()
 

@@ -4,7 +4,7 @@ const state = {
   currentCourseId: null,
   currentSessionId: null,
   mode: "rag", // "rag" | "raw"
-  role: localStorage.getItem("scholera_role") || "student", // "student" | "professor"
+  role: localStorage.getItem("ai_tutor_role") || "student", // "student" | "professor"
   materials: [],
   sessions: [],
   quizzes: [],
@@ -98,7 +98,7 @@ function setupEventListeners() {
 /* ===== Role Management ===== */
 function applyRole(role) {
   state.role = role;
-  localStorage.setItem("scholera_role", role);
+  localStorage.setItem("ai_tutor_role", role);
 
   $roleButtons.forEach(b => b.classList.toggle("active", b.dataset.role === role));
 

@@ -8,7 +8,7 @@ from pathlib import Path
 
 from google import genai
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 logger = logging.getLogger(__name__)
 

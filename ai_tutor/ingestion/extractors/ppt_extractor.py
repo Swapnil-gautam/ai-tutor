@@ -9,7 +9,7 @@ from PIL import Image
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 logger = logging.getLogger(__name__)
 

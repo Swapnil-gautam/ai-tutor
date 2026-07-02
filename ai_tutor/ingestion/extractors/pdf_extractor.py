@@ -13,7 +13,7 @@ from pathlib import Path
 from pdftext.extraction import paginated_plain_text_output
 from pdf2image import convert_from_path
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 logger = logging.getLogger(__name__)
 

@@ -1,3 +1,3 @@
-from scholera.cli import main
+from ai_tutor.cli import main
 
 main()

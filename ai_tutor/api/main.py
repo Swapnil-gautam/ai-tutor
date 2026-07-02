@@ -6,8 +6,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from scholera.api.routes import courses, materials, tutor, chat, audio, quiz
-from scholera.storage.metadata_db import init_db
+from ai_tutor.api.routes import courses, materials, tutor, chat, audio, quiz
+from ai_tutor.storage.metadata_db import init_db
 
 STATIC_DIR = Path(__file__).parent / "static"
 
@@ -19,7 +19,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title="Scholera AI",
+    title="AI Tutor",
     description="AI-native Learning Management System backend",
     version="0.1.0",
     lifespan=lifespan,

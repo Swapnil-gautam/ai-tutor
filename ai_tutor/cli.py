@@ -1,4 +1,4 @@
-"""CLI entry points for Scholera: run server, ingest files, ask questions, run evaluation."""
+"""CLI entry points for AI Tutor: run server, ingest files, ask questions, run evaluation."""
 
 import argparse
 import asyncio
@@ -6,11 +6,11 @@ import json
 import sys
 from pathlib import Path
 
-from scholera.storage.metadata_db import init_db
+from ai_tutor.storage.metadata_db import init_db
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Scholera AI Backend")
+    parser = argparse.ArgumentParser(description="AI Tutor Backend")
     sub = parser.add_subparsers(dest="command", required=True)
 
     # --- serve ---
@@ -80,12 +80,12 @@ def main():
 
 def _run_server(args):
     import uvicorn
-    uvicorn.run("scholera.api.main:app", host=args.host, port=args.port, reload=True)
+    uvicorn.run("ai_tutor.api.main:app", host=args.host, port=args.port, reload=True)
 
 
 def _run_ingest(args):
-    from scholera.ingestion.pipeline import run_ingestion
-    from scholera.storage import metadata_db as db
+    from ai_tutor.ingestion.pipeline import run_ingestion
+    from ai_tutor.storage import metadata_db as db
 
     course = db.get_course(args.course_id)
     if not course:
@@ -107,7 +107,7 @@ def _run_ingest(args):
     )
 
     import shutil
-    from scholera.config import settings
+    from ai_tutor.config import settings
     upload_path = settings.uploads_dir / f"{material['id']}{ext}"
     shutil.copy2(str(file_path), str(upload_path))
 
@@ -117,8 +117,8 @@ def _run_ingest(args):
 
 
 def _run_ask_raw(args):
-    from scholera.generation.api_errors import format_client_error
-    from scholera.generation.direct_gemini import ask_gemini_direct
+    from ai_tutor.generation.api_errors import format_client_error
+    from ai_tutor.generation.direct_gemini import ask_gemini_direct
 
     question = " ".join(args.question)
     print(f"\nQuestion (no RAG): {question}\n")
@@ -146,8 +146,8 @@ def _run_ask_raw(args):
 
 
 async def _run_ask(args):
-    from scholera.generation.tutor import ask_tutor
-    from scholera.storage import metadata_db as db
+    from ai_tutor.generation.tutor import ask_tutor
+    from ai_tutor.storage import metadata_db as db
 
     course = db.get_course(args.course_id)
     if not course:
@@ -170,8 +170,8 @@ async def _run_ask(args):
 
 
 async def _run_evaluate(args):
-    from scholera.evaluation.eval_runner import run_evaluation
-    from scholera.storage import metadata_db as db
+    from ai_tutor.evaluation.eval_runner import run_evaluation
+    from ai_tutor.storage import metadata_db as db
 
     course = db.get_course(args.course_id)
     if not course:
@@ -203,13 +203,13 @@ async def _run_evaluate(args):
 
 
 def _run_create_course(args):
-    from scholera.storage import metadata_db as db
+    from ai_tutor.storage import metadata_db as db
     course = db.create_course(args.title, args.description)
     print(f"Course created: {course['id']} — {course['title']}")
 
 
 def _run_reset_db(args):
-    from scholera.storage.reset_db import reset_all_local_data
+    from ai_tutor.storage.reset_db import reset_all_local_data
     reset_all_local_data()
     init_db()
     print("Local storage cleared (SQLite + Chroma + uploads/images/audio).")

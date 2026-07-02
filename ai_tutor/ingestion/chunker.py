@@ -3,7 +3,7 @@
 import logging
 import uuid
 
-from scholera.config import settings
+from ai_tutor.config import settings
 
 logger = logging.getLogger(__name__)
 

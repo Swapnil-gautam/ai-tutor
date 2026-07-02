@@ -7,8 +7,8 @@ import uuid
 
 from google import genai
 
-from scholera.config import settings
-from scholera.storage import metadata_db as db
+from ai_tutor.config import settings
+from ai_tutor.storage import metadata_db as db
 
 logger = logging.getLogger(__name__)
 
