@@ -4,9 +4,7 @@ An AI-native that ingests course materials (PDF/PPTX) and powers a **RAG Tutor**
 
 ## Demo
 
-<video src="Demo_video.mp4" controls muted playsinline style="max-width: 100%;"></video>
-
-- [Download demo video (`Demo_video.mp4`)](Demo_video.mp4)
+https://github.com/user-attachments/assets/8f85a144-37ae-4001-b37a-5600dbfaff8d
 
 ## Installation
 
